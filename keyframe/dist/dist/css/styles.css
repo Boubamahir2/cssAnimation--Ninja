@@ -1,0 +1,143 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road {
+  position: relative;
+}
+
+.sky {
+  height: 40%;
+  background: skyblue;
+}
+
+.grass {
+  height: 30%;
+  background: #043b04;
+}
+
+.road {
+  height: 30%;
+  background: #272727;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 10px solid #444444;
+  border-bottom: 10px solid #444444;
+  width: 100%;
+}
+
+.road .line {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+
+.road .mario {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  -webkit-animation-name: drive;
+          animation-name: drive;
+  -webkit-animation-duration: 5500ms;
+          animation-duration: 5500ms;
+  /*this property let us set behavior of our animatio, thats say changing how our it starts and how it ends */
+  /* animation-timing-function: ease-in; starts slowly and end speeding and opposite is ease-out*/
+  /*animation-timing-function: linear; constant it goes with a contant speed*/
+  /*animation-timing-function: ease-in-out;*/
+  /*we can set our own timing function using cubic-bezier*/
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  /*animation file mode let us set the position of our animation to stay where we want  */
+  /*animation-fill-mode: forwards;
+    animation-fill-mode: backwards;*/
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  /*animation-iteration-count let us kinda control how many times we want the animation  to run ;*/
+  /*animation-iteration-count: 3;*/
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  /*let the animation to over and over and over without stoping */
+}
+
+.road .luigi {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  -webkit-animation-name: drive;
+          animation-name: drive;
+  -webkit-animation-duration: 5600ms;
+          animation-duration: 5600ms;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  /* animation-direction let us set the direction where we want our animation to run*/
+  animation-direction: reverse;
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  -webkit-animation-name: cloud 80s;
+          animation-name: cloud 80s;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0px;
+}
+
+@-webkit-keyframes drive {
+  from {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  to {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+}
+
+@keyframes drive {
+  from {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  to {
+    -webkit-transform: translateX(2000px);
+            transform: translateX(2000px);
+  }
+}
+
+@-webkit-keyframes cloud {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes cloud {
+  from {
+    left: -300px;
+  }
+  to {
+    left: 100%;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

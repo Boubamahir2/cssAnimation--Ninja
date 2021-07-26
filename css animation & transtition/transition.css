@@ -1,0 +1,23 @@
+body{
+  background: #333;
+  font-family: sans-serif;
+}
+
+.box{
+  background: rgb(233, 129, 216);
+  width: 300px;
+  height: 300px;
+  position: relative;
+  margin: auto;
+  top: 200px;
+  cursor: pointer;
+  transition: background 1s, border-radius 500ms ease-in-out, transform 0.5s;
+  
+}
+
+.box:hover{
+  background: rgb(255, 0, 140);
+  border-radius: 50%;
+  transform: rotatez(360deg);
+  
+}

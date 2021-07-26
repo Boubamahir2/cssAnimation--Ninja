@@ -1,0 +1,178 @@
+body{
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+*{
+  list-style: none;
+  font-family: sans-serif;
+}
+
+.nav{
+  padding: 50px;
+  text-align: center;
+  > ul{
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    background: #ddd;
+    border-radius: 5px;
+
+    > li{
+      float: left;
+      width: 150px;
+      height: 60px;
+      line-height: 60px;
+      justify-content: center;
+      position: relative;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.7);
+      cursor: pointer;
+      &:hover{
+       background: #d5d5d5; 
+    
+      }
+      &:last-child{
+        border-radius: 0 0 5px 5px;
+      }
+
+      &::after{
+        display: block;
+        content: "";
+        clear: both;
+      }
+    }
+
+  }
+}
+ul.drope-menu{
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 0;
+  li{
+    background: #666;
+    color: rgba(255,255,255,0.7);
+
+    &:hover{
+      background: #606060;
+    }
+  
+    &:last-child{
+      border-radius: 0 0 5px 5px;
+    }
+  }
+}
+
+ul.drope-menu li{
+  display: none;
+}
+
+li:hover > ul.drope-menu li{
+  display: block;
+}
+
+li:hover > ul.drope-menu.menu1 li{
+  transform-origin: top left;
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}){
+      opacity: 0;
+    animation: menu1  0.1s*$i forwards ease-in;
+    transition: menu1 ;
+    } 
+  }
+}
+
+@keyframes menu1{
+  0%{
+    opacity: 0;
+    transform: rotateY(90deg) translateY(-40px);
+  }
+  100%{opacity:1;
+    transform: rotateY(0deg) translateY(0);
+  }
+
+}
+
+li:hover > ul.drope-menu.menu2 li{
+  transform-origin: top center;
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}){
+      opacity: 0;
+    animation: menu2 0.1s 0.1s*$i forwards ease-in;
+    transition: menu2 ;
+    }
+  }
+}
+
+@keyframes menu2{
+  0%{
+    opacity: 0;
+    transform: rotatex(90deg) ;
+  }
+  100%{opacity:1;
+    transform: rotatex(0deg);
+
+  }
+
+}
+
+
+li:hover > ul.drope-menu.menu3 li{
+  transform-origin: top center;
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}){
+      opacity: 0;
+    animation: menu3 0.1s 0.1s*$i forwards ease-in;
+    transition: menu3 ;
+
+    }
+    
+  }
+  
+}
+
+@keyframes menu3{
+  0%{
+    opacity: 0;
+    transform: rotatex(90deg) ;
+  }
+  100%{opacity:1;
+    transform: rotatex(0deg);
+
+  }
+
+
+}
+
+
+li:hover > ul.drope-menu.menu4 li{
+  transform-origin: top right;
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}){
+      opacity: 0;
+    animation: menu4  0.1s*$i forwards ease-in;
+    transition: menu4 ;
+
+    }
+    
+  }
+  
+}
+
+@keyframes menu4{
+  0%{
+    opacity: 0;
+    transform: rotateY(90deg) translateY(-40px);
+  }
+  100%{opacity:1;
+    transform: rotateY(0deg) translateY(0);
+  }
+
+}
+
+

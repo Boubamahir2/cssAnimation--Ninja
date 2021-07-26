@@ -1,0 +1,202 @@
+@import url(https://fonts.googleapis.com/css?family=roboto);
+
+body {
+  background:#333;
+  font-size: 22px;
+  line-height: 32px;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word !important;/*this  property wether or not words are allowed to break*/
+  font-family: 'roboto', sans-serif;
+}
+
+a{
+  color: #ffffff;
+
+}
+
+.toggle, [id^=drop]{
+  display: none;
+}
+
+#logo{
+  display: block;
+  padding: 0 30px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px;
+
+}
+
+#main-toggle{
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: inherit;
+  user-select: none;
+}
+
+.nav-icon{
+  background: rgb(248, 247, 247);
+  display: block;
+  height: 2px;
+  width: 18px;
+  position:relative ;
+}
+
+.nav-icon::before, .nav-icon::after{
+  content: " ";
+  background: rgb(248, 247, 247);
+  display: block; /*allows you to click on the whole item area instead of the item itself*/
+  height: 100%;
+  width: 100%;
+  position:absolute;
+}
+
+.nav-icon::before{
+  top:5px;
+}
+
+.nav-icon::after{
+  bottom:5px;
+}
+
+nav::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul{
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+nav ul li{
+margin: 0;
+float: left;
+background: #515f9c;
+}
+
+nav a{
+  text-decoration: none;
+  display: block;
+  padding: 0 20px;
+  color: #ffffff;
+  font-size: 20px ;
+  line-height: 60px;
+
+}
+
+nav ul li ul li:hover{
+  background: #7083d8;
+}
+
+nav ul ul{
+  display: none;
+  position: absolute;
+  top:60px;
+}
+
+nav ul ul li{
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+  
+}
+
+nav ul ul ul li{
+  position: relative;
+  top: -60px;
+  left: 170px;
+  
+}
+
+nav ul li:hover>ul{
+  display: inherit;
+}
+
+li>a::after{
+  content: " +";
+}
+
+li>a:only-child::after{
+  content: "";
+}
+
+@media all and (max-width:768px) {
+  nav{
+    margin: 0;
+  }
+
+  nav ul{
+    float:none ;
+  }
+
+  .toggle+a,.menu{
+    display: none;
+  }
+
+  .toggle{
+    display: block;
+    background-color: #515f9c;
+    padding: 0 20px;
+    color: #ffffff;
+    font-size: 20px ;
+    line-height: 60px;
+    text-decoration: none;
+    border: none;
+
+  }
+
+  .toggle:hover{
+    background-color: #7083d8;
+  }
+
+  [id^=drop]:checked+ul{
+    display:block;
+  }
+
+  nav ul li{
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul .toggle, nav ul ul a{
+    padding: 0 40px;
+  }
+  
+  nav ul ul ul a{
+    padding: 0 80px;
+    background: #141625;
+  }
+
+  nav ul li ul li .toggle, nav ul ul a{
+    background: #141625;
+  }
+
+  nav ul ul {
+    float: none;
+    color: #ffffff;
+    position: static;
+  }
+
+  nav ul ul li:hover>ul, nav ul li:hover{
+    display: none;
+  }
+
+  nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li{
+    position: static;
+
+  }
+}

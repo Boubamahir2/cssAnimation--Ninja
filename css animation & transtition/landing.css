@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+a.btn{
+  text-decoration: none;
+}
+
+body{
+  line-height: 1.6;
+  background: #12475f;
+  color: #fff;
+  text-align: center;
+}
+
+.container{
+  max-width: 960px;
+  padding: 0 30px;
+  margin: 0 auto;
+  position: relative;
+  left: -1500px;
+  animation: slide 2.5s 1s forwards ease-out;
+  align-items: center;
+ 
+}
+#showcase{
+  height: 300px;
+}
+
+#showcase h1{
+  top: -200px;
+  height: 300px;
+  position: relative;
+  animation: heading 2.5s 1s forwards ease-out ;
+  
+}
+/*
+.btn{
+  position: relative;
+  color: #fff;
+  padding: 10px 30px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 0 auto;
+  bottom: -1000px;
+  animation: btn 2.5s 1s forwards ease-out;
+}*/
+
+.btn{
+  display: inline-block;
+  color: #fff;
+  padding: 10px 30px;
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 40px auto;
+  opacity: 0;
+  animation: btn 3s 3s forwards ease-out;
+  transition:transform 1s ;
+}
+
+.btn:hover{
+transform: rotateZ(360deg);
+color: rgb(195, 195, 247);
+background: linear-gradient(rgb(124, 3, 60), rgb(248, 136, 229));
+}
+
+@keyframes heading{
+  0%{
+    top: -200px;
+  }
+
+  100%{
+    top: 200px;
+  }
+}
+
+@keyframes slide{
+  0%{
+    left: -1500px;
+  }
+  100%{
+    left: 0;
+  }
+}
+
+@keyframes btn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+   opacity: 1;
+  }
+}

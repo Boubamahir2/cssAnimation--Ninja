@@ -1,0 +1,112 @@
+html,body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+}
+
+.sky{
+  height: 40%;
+  background: skyblue;
+
+}
+
+.grass{
+  height: 30%;
+  background: rgb(4, 59, 4);
+
+}
+
+.road{
+  height: 30%;
+  background: rgb(39, 39, 39);
+  box-sizing: border-box;
+  border-top: 10px solid rgb(68, 68, 68);
+  border-bottom: 10px solid rgb(68, 68, 68);
+  width: 100%;
+  .line{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    width: 100%;
+    position: absolute;
+    top: 45%;
+  }
+
+  .mario{
+    position: absolute;
+    top:-40px;
+    left:0;
+    animation-name: drive;
+    animation-duration: 5500ms ;
+    
+    /*this property let us set behavior of our animatio, thats say changing how our it starts and how it ends */
+   /* animation-timing-function: ease-in; starts slowly and end speeding and opposite is ease-out*/ 
+    /*animation-timing-function: linear; constant it goes with a contant speed*/
+    /*animation-timing-function: ease-in-out;*/
+    /*we can set our own timing function using cubic-bezier*/
+    animation-timing-function: ease-in-out;
+
+        /*animation file mode let us set the position of our animation to stay where we want  */
+    /*animation-fill-mode: forwards;
+    animation-fill-mode: backwards;*/
+    animation-fill-mode: both;
+       /*animation-iteration-count let us kinda control how many times we want the animation  to run ;*/
+    /*animation-iteration-count: 3;*/
+    animation-iteration-count: infinite;/*let the animation to over and over and over without stoping */
+  }
+
+  .luigi{
+    position: absolute;
+    bottom:40px;
+    left:0;
+    animation-name: drive;
+    animation-duration: 5600ms ;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    /* animation-direction let us set the direction where we want our animation to run*/
+    animation-direction:reverse ;
+    
+  }
+  
+}
+
+.cloud{
+  position: absolute;
+
+}
+.cloud:nth-child(1){
+width: 200px;
+top: 120px;
+opacity: 0.5;
+animation: cloud 80s linear infinite reverse;
+}
+.cloud:nth-child(2){
+  width: 300px;
+  top: 0px;
+  animation: cloud 80s linear infinite reverse;
+  }
+
+@keyframes drive{
+  from {
+  transform:translateX(-100px) ;
+  }
+
+  to{
+  transform: translateX(2000px);
+  }
+}
+
+@keyframes cloud{
+  from{
+    left: -300px;
+  }
+  to{
+  left:100%
+  }
+}

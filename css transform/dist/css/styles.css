@@ -1,0 +1,21 @@
+body {
+  background-color: lightblue;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  width: 100px;
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper img {
+  /* transform: translate(200px, 200px);*/
+  /*transform: scale(0.5 ,3);*/
+  -webkit-transform: rotatez(-90deg) translatey(200px) scale(2);
+          transform: rotatez(-90deg) translatey(200px) scale(2);
+}
+/*# sourceMappingURL=styles.css.map */

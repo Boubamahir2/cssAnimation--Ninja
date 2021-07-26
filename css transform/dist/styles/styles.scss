@@ -1,0 +1,29 @@
+body{
+  background-color: lightblue;
+ align-items: center;
+}
+.wrapper{
+  width: 100px;
+  padding: 20px;
+  box-sizing: border-box;
+ 
+
+  /* img{
+  transform: translate(200px, 200px);*/
+   /*transform: scale(0.5 ,3);*/
+   /*transform: rotatez(-90deg) translatey(200px) scale(2) ;
+  }*/
+ 
+}
+
+.circle{
+  width: 100px;
+  padding: 50px 0;
+  line-height: 0;
+  margin: 60px auto;
+  background: pink;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+
+}
